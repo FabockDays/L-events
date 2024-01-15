@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>L - events</title>
+    <!-- Vincular el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+  <body>
+    <div class="contact-container">
+      <div class="container">
+        <div class="left-col">
+          <img
+            class="logo"
+            src="https://gfleon.com.mx/wp-content/uploads/2018/10/cropped-LOGO-INICIALES-FONDO-TRANSPARENTE.png"
+          />
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+          <div class="description">Dark Mode</div>
+        </div>
+
+        <h1>L - events</h1>
+        <p>
+          Nuestro compromiso es brindar experiencias extraordinarias, diseñando
+          y ejecutando eventos exclusivos que cautivan a una audiencia selecta.
+          Desde galas privadas hasta encuentros corporativos de alto nivel.
+          Contamos con un equipo experto que fusiona creatividad,
+          profesionalismo y un profundo conocimiento del mercado global para
+          ofrecer soluciones a medida. Ya sea en locaciones icónicas o destinos
+          exóticos,no solo creamos eventos, creamos experiencias exclusivas que
+          perduran en la memoria de quienes tienen el privilegio de participar.
+        </p>
+
+        <form id="register-form" method="post">
+          {% csrf_token %} {{ form.as_p }}
+
+          <button type="submit" id="submit" name="submit">Registrarse</button>
+          <a href="{% url 'custom_login' %}">Login</a>
+        </form>
+        <div>
+         
+          
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/home.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+  background: url(http://thekitemap.com/images/feedback-img.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+#feedback-page {
+  text-align: center;
+}
+
+#form-main {
+  width: 100%;
+  float: left;
+  padding-top: 20px;
+}
+
+#form-div {
+  background-color: rgba(72, 72, 72, 0.4);
+  padding-left: 50px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 250px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: -180px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+h2{
+  color: #74b6c2;
+}
+
+
+
+.invitados-input {
+  width: 180px;
+  border:1px solid black;
+  cursor: pointer;
+}
+/* Estilos para el tipo de salón */
+.salon-input {
+  width: 180px;
+  border:1px solid black;
+  cursor: pointer;
+}
+/* Estilos para la fecha */
+.fecha-input {
+  width: 180px;
+  border:1px solid black;
+  cursor: pointer;
+}
+/* Estilos para la entrada de hora */
+.hora-input {
+  width: 180px;
+  border:1px solid black;
+  cursor: pointer;
+}
+
+
+.feedback-input {
+  color: #3c3c3c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 21px;
+  background-color: #fbfbfb;
+  padding: 11px 11px 11px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.feedback-input:focus {
+  background: #fff;
+  box-shadow: 0;
+  border: 1px solid #3498db;
+  color: #3498db;
+  outline: none;
+  padding: 11px 11px 11px 54px;
+}
+
+.focused {
+  color: #30aed6;
+  border: #30aed6 solid 1px;
+}
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  background-color: white;
+}
+
+#button-blue {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  float: left;
+  width: 75%;
+  border: #fbfbfb solid 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+
+#button-blue:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0493bd;
+}
+
+.submit:hover {
+  color: #3498db;
+}
+
+.ease {
+  width: 0px;
+  height: 74px;
+  background-color: #fbfbfb;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.submit:hover .ease {
+  width: 75%;
+  background-color: white;
+}
+
+/*LOGOUT*/
+
+.logout {
+  position: absolute;
+  top: 30px;
+  right: 70px;
+  color:  #74b6c2; 
+  font-size: 18px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none; 
+}
+
+.logout a {
+  color: inherit;
+  text-decoration: none; 
+}
+
+/*ERROR MESSAGES*/
+.messages{
+  background-color: rgba(72, 72, 72, 0.4);
+  width: 350px;
+  
+}
+
+/*MODAL*/
+#modal-reserva {
+  border-radius: 20px;
+  height: 80px;
+  width: 280px;
+  top: 50%; 
+  left: 50%;
+  transform: translate(180%, 10%); /* Centra exactamente el modal */
+  background-color:  rgba(72, 72, 72, 0.4);
+  border: 1px solid #fff ;
+  
+
+}
+
+.modal-content {
+  text-align: center; 
+  padding-top: 12px;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}

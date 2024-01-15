@@ -1,0 +1,84 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L-events reservas</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/formulario_invitados.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        
+    </head>
+    <body>
+
+       
+
+        <div id="form-main">
+            <div id="form-div">
+                 <!-- Mostrar el nombre del usuario -->
+                {% if user_registered %}
+                <h2>Bienvenido {{ user_registered.username }} 👋</h2>
+                {% endif %}
+                <form id="ReservaForm" method="post" action="{% url 'formulario_invitados' %}">
+                    {% csrf_token %}
+                    <p class="name">
+                        {{ form.cantidad_invitados }}
+                    </p>
+                    
+                    <p class="text">
+                        {{ form.tipo_salon }}
+                    </p>
+                    
+                    <p class="email">
+                        {{ form.fecha }}
+                        <span id="cal-icon" style="cursor: pointer;" alt="Calendario">📅</span>
+                    </p>
+
+                    <p class="email">
+                        {{ form.hora_inicio}}
+                    </p>
+
+                    <p class="email">
+                        {{ form.hora_final}}
+                    </p>
+                
+
+                    <div class="submit">
+                        <input type="submit" value="ENVIAR" id="button-blue"/>
+                    <div class="ease"></div>
+                </form>        
+            </div>
+        </div>    
+        
+        <div class="logout">
+            <a href="?logout=true">Logout <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+        
+        
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <!-- Modal reserva exitosa -->
+        {% if reserva_exitosa %}
+        <div id="modal-reserva" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal('modal-reserva')" style="cursor: pointer;">&times;</span>
+                <p>¡Ya tienes tu reserva!</p>
+            </div>
+        </div>
+        {% endif %}
+
+        
+        
+        <script src="{% static 'js/reserva_logic.js' %}"></script>
+        <script src="{% static 'js/modal.js' %}"></script>
+    </body>
+</html>
